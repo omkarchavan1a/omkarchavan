@@ -81,7 +81,7 @@ export const contactDetails = {
   email: "oomkarchavan@gmail.com",
   phone: "(91)9096518451",
   socials: [
-    { name: "GitHub", url: "#", icon: "Github" },
+    { name: "GitHub", url: "https://github.com/omkarchavan1a", icon: "Github" },
     { name: "LinkedIn", url: "#", icon: "Linkedin" }
   ]
 };
