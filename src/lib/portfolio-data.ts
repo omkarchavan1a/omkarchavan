@@ -79,12 +79,13 @@ export const educationalTimeline = [
 
 export const contactDetails = {
   email: "oomkarchavan@gmail.com",
-  phone: "+1 (234) 567-890",
+  phone: "(91)9096518451",
   socials: [
     { name: "GitHub", url: "#", icon: "Github" },
     { name: "LinkedIn", url: "#", icon: "Linkedin" },
     { name: "Twitter", url: "#", icon: "Twitter" },
   ]
 };
+
 
 
