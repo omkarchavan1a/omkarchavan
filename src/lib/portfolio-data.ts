@@ -82,6 +82,6 @@ export const contactDetails = {
   phone: "(91)9096518451",
   socials: [
     { name: "GitHub", url: "https://github.com/omkarchavan1a", icon: "Github" },
-    { name: "LinkedIn", url: "#", icon: "Linkedin" }
+    { name: "LinkedIn", url: "https://www.linkedin.com/in/omkar-chavan-1402ba2a3", icon: "Linkedin" }
   ]
 };
