@@ -19,7 +19,6 @@ import { Loader2 } from "lucide-react";
 import { Separator } from "../ui/separator";
 
 export function AboutSection() {
-  const profileImage = PlaceHolderImages.find((img) => img.id === "omkar-profile");
   const [isPending, startTransition] = useTransition();
   const [summary, setSummary] = useState<string | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -46,27 +45,15 @@ export function AboutSection() {
 
   return (
     <section id="about" className="container">
-      <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-3">
-        <div className="relative mx-auto h-64 w-64 md:h-80 md:w-80 overflow-hidden rounded-full shadow-lg border-4 border-primary/20">
-          {profileImage && (
-            <Image
-              src={profileImage.imageUrl}
-              alt={profileImage.description}
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              data-ai-hint={profileImage.imageHint}
-            />
-          )}
-        </div>
-        <div className="space-y-6 md:col-span-2">
+      <div className="grid grid-cols-1 items-center gap-12">
+        <div className="space-y-6 text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
             About Me
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
             {aboutMe.introduction}
           </p>
-          <div className="flex items-center gap-4 pt-4">
+          <div className="flex items-center justify-center gap-4 pt-4">
              <Button onClick={handleGenerateSummary}>Generate AI Resume Summary</Button>
           </div>
         </div>
