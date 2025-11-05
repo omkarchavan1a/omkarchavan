@@ -42,7 +42,7 @@ export const projects = [
   {
     name: "MicroGT Services",
     description: "A project showcasing web development and service-oriented architecture.",
-    techStack: ["Python", "Pandas", "Matplotlib", "Data Visualization"],
+    techStack: ["Next.js", "TypeScript", "Zapier"],
     githubLink: "#",
     imagePlaceholderId: "project-football-analysis"
   }
