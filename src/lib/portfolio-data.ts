@@ -1,3 +1,4 @@
+
 export const aboutMe = {
   name: "Omkar",
   introduction: "A passionate and disciplined individual with a deep-rooted love for data analysis, automation, and digital systems. My journey is guided by the values of continuous learning, unwavering commitment, and a respect for tradition, which I blend with a forward-thinking approach to technology. I thrive on uncovering insights from data and building efficient systems that drive innovation."
@@ -39,8 +40,8 @@ export const projects = [
     imagePlaceholderId: "project-rental-car"
   },
   {
-    name: "Football Player Analysis",
-    description: "An in-depth data analysis project using Python to evaluate football player performance metrics. This work highlights my skills in data extraction, cleaning, analysis, and visualization to derive actionable insights.",
+    name: "MicroGT Services",
+    description: "A project showcasing web development and service-oriented architecture.",
     techStack: ["Python", "Pandas", "Matplotlib", "Data Visualization"],
     githubLink: "#",
     imagePlaceholderId: "project-football-analysis"
