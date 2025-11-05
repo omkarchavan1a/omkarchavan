@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 import Link from "next/link";
 import { contactDetails } from "@/lib/portfolio-data";
 import { Button } from "@/components/ui/button";
@@ -16,12 +16,54 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import * as Icons from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { Loader2 } from "lucide-react";
 
 function isIconName(name: string): name is keyof typeof Icons {
   return name in Icons;
 }
 
 export function ContactSection() {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+    const zapierWebhookUrl = "https://hooks.zapier.com/hooks/catch/25226128/us9l3s6/";
+
+    try {
+      const response = await fetch(zapierWebhookUrl, {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Message Sent!",
+          description: "Your message has been submitted successfully.",
+        });
+        form.reset();
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch (error) {
+      toast({
+        variant: "destructive",
+        title: "Uh oh! Something went wrong.",
+        description: "Could not send your message. Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact" className="container">
       <div className="text-center">
@@ -41,20 +83,23 @@ export function ContactSection() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <form action="https://hooks.zapier.com/hooks/catch/25226128/us9l3s6/" method="POST" className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="name">Name</Label>
-                <Input id="name" name="name" placeholder="Your Name" required />
+                <Input id="name" name="name" placeholder="Your Name" required disabled={isSubmitting} />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
-                <Input id="email" name="email" type="email" placeholder="Your Email" required />
+                <Input id="email" name="email" type="email" placeholder="Your Email" required disabled={isSubmitting} />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="message">Message</Label>
-                <Textarea id="message" name="message" placeholder="Your Message" required />
+                <Textarea id="message" name="message" placeholder="Your Message" required disabled={isSubmitting} />
               </div>
-              <Button type="submit">Send Message</Button>
+              <Button type="submit" disabled={isSubmitting}>
+                {isSubmitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                {isSubmitting ? 'Sending...' : 'Send Message'}
+              </Button>
             </form>
           </CardContent>
         </Card>
