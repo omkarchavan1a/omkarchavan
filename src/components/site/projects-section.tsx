@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Github } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 
 export function ProjectsSection() {
   return (
@@ -57,13 +57,23 @@ export function ProjectsSection() {
                     ))}
                   </div>
                 </CardContent>
-                <CardFooter>
-                  <Button asChild variant="outline">
-                    <Link href={project.githubLink} target="_blank">
-                      <Github className="mr-2 h-4 w-4" />
-                      View on GitHub
-                    </Link>
-                  </Button>
+                <CardFooter className="flex items-center gap-4">
+                  {project.githubLink && (
+                    <Button asChild variant="outline">
+                      <Link href={project.githubLink} target="_blank">
+                        <Github className="mr-2 h-4 w-4" />
+                        View on GitHub
+                      </Link>
+                    </Button>
+                  )}
+                  {project.liveLink && (
+                     <Button asChild>
+                      <Link href={project.liveLink} target="_blank">
+                        <ExternalLink className="mr-2 h-4 w-4" />
+                        Live Website
+                      </Link>
+                    </Button>
+                  )}
                 </CardFooter>
               </Card>
             );

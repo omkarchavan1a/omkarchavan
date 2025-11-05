@@ -37,6 +37,7 @@ export const projects = [
     description: "A comprehensive database management system designed to streamline car rental operations, from vehicle tracking to customer bookings. This project showcases my ability to design and implement efficient SQL databases.",
     techStack: ["SQL", "Database Design", "System Analysis"],
     githubLink: "#",
+    liveLink: "",
     imagePlaceholderId: "project-rental-car"
   },
   {
@@ -44,6 +45,7 @@ export const projects = [
     description: "A project showcasing web development and service-oriented architecture.",
     techStack: ["Next.js", "TypeScript", "Zapier"],
     githubLink: "#",
+    liveLink: "#",
     imagePlaceholderId: "project-football-analysis"
   }
 ];
