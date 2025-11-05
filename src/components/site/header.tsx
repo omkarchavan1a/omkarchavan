@@ -2,11 +2,12 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Menu, Mountain } from "lucide-react";
+import { Menu } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { MandalaIcon } from "../icons/mandala-icon";
 
 const navItems = [
   { name: "About", href: "#about" },
@@ -38,7 +39,7 @@ export function Header() {
     >
       <div className="container flex h-16 items-center">
         <Link href="/" className="mr-6 flex items-center space-x-2">
-          <Mountain className="h-6 w-6 text-primary" />
+          <MandalaIcon className="h-6 w-6 text-primary" />
           <span className="font-bold font-headline">Omkar Ascent</span>
         </Link>
         <nav className="hidden items-center space-x-6 text-sm font-medium md:flex">
@@ -66,7 +67,7 @@ export function Header() {
                   href="/"
                   className="flex items-center gap-2 text-lg font-semibold"
                 >
-                  <Mountain className="h-6 w-6 text-primary" />
+                  <MandalaIcon className="h-6 w-6 text-primary" />
                   <span className="sr-only">Omkar Ascent</span>
                 </Link>
                 {navItems.map((item) => (
