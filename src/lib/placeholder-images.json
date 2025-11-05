@@ -20,9 +20,9 @@
     },
     {
       "id": "project-football-analysis",
-      "description": "Thumbnail for Football Player Analysis project",
-      "imageUrl": "https://images.unsplash.com/photo-1674536138437-2eb1c95fc05f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c3RhZGl1bSUyMHNvY2NlcnxlbnwwfHx8fDE3NjIzNDI0NTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "stadium soccer"
+      "description": "Thumbnail for MicroGT Services project",
+      "imageUrl": "https://images.unsplash.com/photo-1556740772-1a28a1a3c74c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtaWNyb3NlcnZpY2VzfGVufDB8fHx8MTc2MjYxNTc1Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "web services"
     }
   ]
 }
