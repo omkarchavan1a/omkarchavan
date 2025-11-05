@@ -17,6 +17,7 @@ import { Textarea } from "@/components/ui/textarea";
 import * as Icons from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
+import { submitContactForm } from "@/app/actions";
 
 function isIconName(name: string): name is keyof typeof Icons {
   return name in Icons;
@@ -32,32 +33,24 @@ export function ContactSection() {
 
     const form = event.currentTarget;
     const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
-    const zapierWebhookUrl = "https://hooks.zapier.com/hooks/catch/25226128/us9l3s6/";
 
     try {
-      const response = await fetch(zapierWebhookUrl, {
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
+      const result = await submitContactForm(formData);
 
-      if (response.ok) {
+      if (result.success) {
         toast({
           title: "Message Sent!",
-          description: "Your message has been submitted successfully.",
+          description: result.message,
         });
         form.reset();
       } else {
-        throw new Error("Form submission failed");
+        throw new Error(result.message);
       }
-    } catch (error) {
+    } catch (error: any) {
       toast({
         variant: "destructive",
-        title: "some thing error s",
-        description: "",
+        title: "Uh oh! Something went wrong.",
+        description: error.message || "Could not send your message. Please try again.",
       });
     } finally {
       setIsSubmitting(false);

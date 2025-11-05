@@ -41,3 +41,43 @@ export async function getResumeSummary(): Promise<{ summary: string } | { error:
     return { error: "Failed to generate resume summary. Please try again." };
   }
 }
+
+const contactFormSchema = z.object({
+  name: z.string().min(1, "Name is required."),
+  email: z.string().email("Invalid email address."),
+  message: z.string().min(1, "Message is required."),
+});
+
+export async function submitContactForm(
+  formData: FormData
+): Promise<{ success: boolean; message: string }> {
+    const data = Object.fromEntries(formData.entries());
+    const parsed = contactFormSchema.safeParse(data);
+
+    if (!parsed.success) {
+      return { success: false, message: "Invalid form data." };
+    }
+
+    const zapierWebhookUrl = "https://hooks.zapier.com/hooks/catch/25226128/us9l3s6/";
+
+    try {
+      const response = await fetch(zapierWebhookUrl, {
+        method: "POST",
+        body: JSON.stringify(parsed.data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (response.ok) {
+        return { success: true, message: "Message sent successfully!" };
+      } else {
+        const errorBody = await response.text();
+        console.error("Zapier webhook error:", response.status, errorBody);
+        return { success: false, message: `Form submission failed with status: ${response.status}` };
+      }
+    } catch (error) {
+      console.error("Error submitting contact form:", error);
+      return { success: false, message: "An unexpected error occurred. Please try again." };
+    }
+}
