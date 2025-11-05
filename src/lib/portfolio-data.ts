@@ -36,7 +36,7 @@ export const projects = [
     name: "Rental Car System",
     description: "A comprehensive database management system designed to streamline car rental operations, from vehicle tracking to customer bookings. This project showcases my ability to design and implement efficient SQL databases.",
     techStack: ["SQL", "Database Design", "System Analysis"],
-    githubLink: "#",
+    githubLink: "https://github.com/omkarchavan1a/studio1.git",
     liveLink: "#",
     imagePlaceholderId: "project-rental-car"
   },
@@ -44,7 +44,7 @@ export const projects = [
     name: "MicroGT Services",
     description: "A project showcasing web development and service-oriented architecture.",
     techStack: ["Next.js", "TypeScript", "Zapier"],
-    githubLink: "#",
+    githubLink: "https://github.com/omkarchavan1a/studio1.git",
     liveLink: "https://microgt-teal.vercel.app/",
     imagePlaceholderId: "project-football-analysis"
   }
@@ -86,3 +86,4 @@ export const contactDetails = {
     { name: "Twitter", url: "#", icon: "Twitter" },
   ]
 };
+
