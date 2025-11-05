@@ -56,6 +56,24 @@ export const educationalTimeline = [
     institution: "University of Mysore",
     year: "2025-2027",
     details: "Pursuing a Master's degree to deepen my expertise in advanced computer science topics and applications."
+  },
+  {
+    degree: "Bachelor of Computer Applications (BCA)",
+    institution: "Progressive Education Societys Modern College of Arts, Science and Commerce",
+    year: "2021-2024",
+    details: "Focused on core computer science principles, database management, and software development, laying a strong foundation for my career in technology."
+  },
+  {
+    degree: "12th Grade (HSC)",
+    institution: "Dr. D. Y. Patil Arts, Commerce & Science College",
+    year: "2021",
+    details: "Completed Higher Secondary Education with a focus on science and mathematics, developing strong analytical and problem-solving skills."
+  },
+  {
+    degree: "10th Grade (SSC)",
+    institution: "Mahatma Phule English Medium School",
+    year: "2019",
+    details: "Successfully completed Secondary School Certificate, building a solid educational base."
   }
 ];
 
