@@ -82,10 +82,6 @@ export const contactDetails = {
   phone: "(91)9096518451",
   socials: [
     { name: "GitHub", url: "#", icon: "Github" },
-    { name: "LinkedIn", url: "#", icon: "Linkedin" },
-    { name: "Twitter", url: "#", icon: "Twitter" },
+    { name: "LinkedIn", url: "#", icon: "Linkedin" }
   ]
 };
-
-
-
