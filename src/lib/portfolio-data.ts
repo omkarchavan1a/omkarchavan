@@ -78,7 +78,7 @@ export const educationalTimeline = [
 ];
 
 export const contactDetails = {
-  email: "omkar@example.com",
+  email: "oomkarchavan@gmail.com",
   phone: "+1 (234) 567-890",
   socials: [
     { name: "GitHub", url: "#", icon: "Github" },
@@ -86,4 +86,5 @@ export const contactDetails = {
     { name: "Twitter", url: "#", icon: "Twitter" },
   ]
 };
+
 
