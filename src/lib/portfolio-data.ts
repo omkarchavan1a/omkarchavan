@@ -22,6 +22,14 @@ export const skills = [
     ]
   },
   {
+    category: "Automations",
+    technologies: [
+      { name: "n8n", icon: "Workflow" },
+      { name: "Zapier", icon: "Zap" },
+      { name: "Make", icon: "Workflow" }
+    ]
+  },
+  {
     category: "Soft Skills",
     technologies: [
       { name: "Problem Solving", icon: "BrainCircuit" },
