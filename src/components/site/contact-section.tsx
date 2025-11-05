@@ -1,6 +1,7 @@
 "use client";
 
-import { useFormState, useFormStatus } from "react-dom";
+import { useActionState } from "react";
+import { useFormStatus } from "react-dom";
 import Link from "next/link";
 import { contactDetails } from "@/lib/portfolio-data";
 import { Button } from "@/components/ui/button";
@@ -34,7 +35,7 @@ function SubmitButton() {
 
 export function ContactSection() {
   const initialState = { message: "", errors: {} };
-  const [state, dispatch] = useFormState(submitContactForm, initialState);
+  const [state, dispatch] = useActionState(submitContactForm, initialState);
   const { toast } = useToast();
 
   useEffect(() => {
