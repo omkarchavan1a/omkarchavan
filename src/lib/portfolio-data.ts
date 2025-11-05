@@ -50,6 +50,12 @@ export const projects = [
 
 export const educationalTimeline = [
   {
+    degree: "Master's in Computer Application",
+    institution: "University of Mysore",
+    year: "2025-2027",
+    details: "Pursuing a Master's degree to deepen my expertise in advanced computer science topics and applications."
+  },
+  {
     degree: "Bachelor of Computer Applications (BCA)",
     institution: "Progressive Education Societys Modern College of Arts, Science and Commerce",
     year: "2021-2024",
