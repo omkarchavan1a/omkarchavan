@@ -56,8 +56,8 @@ export function ContactSection() {
     } catch (error) {
       toast({
         variant: "destructive",
-        title: "Uh oh! Something went wrong.",
-        description: "Could not send your message. Please try again.",
+        title: "some thing error s",
+        description: "",
       });
     } finally {
       setIsSubmitting(false);
