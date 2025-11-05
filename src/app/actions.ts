@@ -41,32 +41,3 @@ export async function getResumeSummary(): Promise<{ summary: string } | { error:
     return { error: "Failed to generate resume summary. Please try again." };
   }
 }
-
-const contactSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters."),
-  email: z.string().email("Invalid email address."),
-  message: z.string().min(10, "Message must be at least 10 characters."),
-});
-
-export async function submitContactForm(prevState: any, formData: FormData) {
-  const validatedFields = contactSchema.safeParse({
-    name: formData.get("name"),
-    email: formData.get("email"),
-    message: formData.get("message"),
-  });
-
-  if (!validatedFields.success) {
-    return {
-      errors: validatedFields.error.flatten().fieldErrors,
-      message: "Please correct the errors in the form.",
-    };
-  }
-
-  // In a real application, you would send this data to your backend or a service like Resend/SendGrid.
-  console.log("Contact form submitted:", validatedFields.data);
-
-  return {
-    message: "Thank you for your message! I will get back to you soon.",
-    errors: {},
-  };
-}

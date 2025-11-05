@@ -1,7 +1,6 @@
 "use client";
 
-import { useActionState } from "react";
-import { useFormStatus } from "react-dom";
+import { useState } from "react";
 import Link from "next/link";
 import { contactDetails } from "@/lib/portfolio-data";
 import { Button } from "@/components/ui/button";
@@ -16,45 +15,13 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import * as Icons from "lucide-react";
-import { submitContactForm } from "@/app/actions";
-import { useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 
 function isIconName(name: string): name is keyof typeof Icons {
   return name in Icons;
 }
 
-function SubmitButton() {
-  const { pending } = useFormStatus();
-  return (
-    <Button type="submit" disabled={pending}>
-      {pending ? "Sending..." : "Send Message"}
-    </Button>
-  );
-}
-
 export function ContactSection() {
-  const initialState = { message: "", errors: {} };
-  const [state, dispatch] = useActionState(submitContactForm, initialState);
-  const { toast } = useToast();
-
-  useEffect(() => {
-    if (state.message) {
-      if(Object.keys(state.errors).length > 0){
-        toast({
-          variant: "destructive",
-          title: "Error",
-          description: state.message,
-        });
-      } else {
-        toast({
-          title: "Success",
-          description: state.message,
-        });
-      }
-    }
-  }, [state, toast]);
-
   return (
     <section id="contact" className="container">
       <div className="text-center">
@@ -74,23 +41,20 @@ export function ContactSection() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <form action={dispatch} className="space-y-4">
+            <form action="https://hooks.zapier.com/hooks/catch/25226128/us9l3s6/" method="POST" className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="name">Name</Label>
-                <Input id="name" name="name" placeholder="Your Name" />
-                {state.errors?.name && <p className="text-sm font-medium text-destructive">{state.errors.name[0]}</p>}
+                <Input id="name" name="name" placeholder="Your Name" required />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
-                <Input id="email" name="email" type="email" placeholder="Your Email" />
-                 {state.errors?.email && <p className="text-sm font-medium text-destructive">{state.errors.email[0]}</p>}
+                <Input id="email" name="email" type="email" placeholder="Your Email" required />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="message">Message</Label>
-                <Textarea id="message" name="message" placeholder="Your Message" />
-                 {state.errors?.message && <p className="text-sm font-medium text-destructive">{state.errors.message[0]}</p>}
+                <Textarea id="message" name="message" placeholder="Your Message" required />
               </div>
-              <SubmitButton />
+              <Button type="submit">Send Message</Button>
             </form>
           </CardContent>
         </Card>
