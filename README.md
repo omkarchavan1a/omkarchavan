@@ -1,4 +1,4 @@
-# Firebase Studio
+#omkar portfolio
 
 This is a NextJS starter in Firebase Studio.
 
