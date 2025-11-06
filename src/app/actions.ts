@@ -55,7 +55,9 @@ export async function submitContactForm(
     const parsed = contactFormSchema.safeParse(data);
 
     if (!parsed.success) {
-      return { success: false, message: "Invalid form data." };
+      // Create a single error message string from Zod errors.
+      const errorMessage = parsed.error.issues.map((issue) => issue.message).join(", ");
+      return { success: false, message: errorMessage };
     }
 
     const zapierWebhookUrl = "https://hooks.zapier.com/hooks/catch/25226128/us9l3s6/";
@@ -74,7 +76,7 @@ export async function submitContactForm(
       } else {
         const errorBody = await response.text();
         console.error("Zapier webhook error:", response.status, errorBody);
-        return { success: false, message: `Form submission failed with status: ${response.status}` };
+        return { success: false, message: `An error occurred while sending your message. Please try again later.` };
       }
     } catch (error) {
       console.error("Error submitting contact form:", error);
