@@ -44,7 +44,7 @@ export const projects = [
     name: "Rental Car System",
     description: "A comprehensive database management system designed to streamline car rental operations, from vehicle tracking to customer bookings. This project showcases my ability to design and implement efficient SQL databases.",
     techStack: ["SQL", "Database Design", "System Analysis"],
-    githubLink: "https://github.com/omkarchavan1a/studio1.git",
+    githubLink: "https://github.com/omkarchavan1a/omkar.git",
     liveLink: "#",
     imagePlaceholderId: "project-rental-car"
   },
