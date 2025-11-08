@@ -52,7 +52,7 @@ export const projects = [
     name: "MicroGT Services",
     description: "A project showcasing web development and service-oriented architecture.",
     techStack: ["Next.js", "TypeScript", "Zapier"],
-    githubLink: "https://github.com/omkarchavan1a/studio1.git",
+    githubLink: "https://github.com/omkarchavan1a/studio.git",
     liveLink: "https://microgt.vercel.app/",
     imagePlaceholderId: "project-football-analysis"
   }
