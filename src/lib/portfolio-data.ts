@@ -41,20 +41,24 @@ export const skills = [
 
 export const projects = [
   {
+    id: "project-rental-car",
     name: "Rental Car System",
     description: "A comprehensive database management system designed to streamline car rental operations, from vehicle tracking to customer bookings. This project showcases my ability to design and implement efficient SQL databases.",
     techStack: ["SQL", "Database Design", "System Analysis"],
     githubLink: "https://github.com/omkarchavan1a/omkar.git",
     liveLink: "#",
-    imagePlaceholderId: "project-rental-car"
+    imagePlaceholderId: "project-rental-car",
+    alt: "SQL database schema for a rental car system project"
   },
   {
+    id: "project-microgt-services",
     name: "MicroGT Services",
     description: "A project showcasing web development and service-oriented architecture.",
     techStack: ["Next.js", "TypeScript", "Zapier"],
     githubLink: "https://github.com/omkarchavan1a/studio.git",
     liveLink: "https://microgt.vercel.app/",
-    imagePlaceholderId: "project-football-analysis"
+    imagePlaceholderId: "project-football-analysis",
+    alt: "Code on a laptop screen representing web development"
   }
 ];
 

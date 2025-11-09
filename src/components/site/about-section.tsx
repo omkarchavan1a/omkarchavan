@@ -1,9 +1,8 @@
 "use client";
 
 import { useState, useTransition } from "react";
-import Image from "next/image";
+import Link from "next/link";
 import { aboutMe } from "@/lib/portfolio-data";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Button } from "@/components/ui/button";
 import { getResumeSummary } from "@/app/actions";
 import {
@@ -16,7 +15,6 @@ import {
 } from "@/components/ui/dialog";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
-import { Separator } from "../ui/separator";
 
 export function AboutSection() {
   const [isPending, startTransition] = useTransition();
@@ -51,7 +49,7 @@ export function AboutSection() {
             About Me
           </h2>
           <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
-            {aboutMe.introduction}
+            A passionate and disciplined individual with a deep-rooted love for <Link href="#project-rental-car" className="text-primary underline">data analysis</Link>, <Link href="#project-microgt-services" className="text-primary underline">automation</Link>, and digital systems. My journey is guided by the values of continuous learning, unwavering commitment, and a respect for tradition, which I blend with a forward-thinking approach to technology. I thrive on uncovering insights from data and building efficient systems that drive innovation.
           </p>
           <div className="flex items-center justify-center gap-4 pt-4">
              <Button onClick={handleGenerateSummary}>Generate AI Resume Summary</Button>

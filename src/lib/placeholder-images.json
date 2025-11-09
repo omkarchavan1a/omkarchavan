@@ -4,25 +4,29 @@
       "id": "hero-background",
       "description": "Abstract geometric pattern for hero background",
       "imageUrl": "https://images.unsplash.com/photo-1533135091724-62cc5402aa20?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGdlb21ldHJpY3xlbnwwfHx8fDE3NjIyOTQ5MjB8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "abstract geometric"
+      "imageHint": "abstract geometric",
+      "alt": "Abstract background for Omkar Chavan's data analyst portfolio"
     },
     {
       "id": "omkar-profile",
       "description": "Professional portrait of Omkar",
       "imageUrl": "https://storage.googleapis.com/aifirebase-7926c.appspot.com/users%2FwY3oGsoXpANk3gV0kPjY%2F9a089f81-54f3-433b-8515-ad4f4453b0a7.jpeg",
-      "imageHint": "professional portrait"
+      "imageHint": "professional portrait",
+      "alt": "Professional portrait of Omkar Chavan"
     },
     {
       "id": "project-rental-car",
       "description": "Thumbnail for Rental Car System project",
       "imageUrl": "https://images.unsplash.com/photo-1610913721979-b20ede600e63?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjYXIlMjBkYXNoYm9hcmR8ZW58MHx8fHwxNzYyMzQyNDU0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "car dashboard"
+      "imageHint": "car dashboard",
+      "alt": "SQL database schema for a rental car system project"
     },
     {
       "id": "project-football-analysis",
       "description": "Thumbnail for MicroGT Services project",
       "imageUrl": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx3ZWIlMjBkZXZlbG9wbWVudHxlbnwwfHx8fDE3NjI4NzgxNTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "web development"
+      "imageHint": "web development",
+      "alt": "Code on a laptop screen representing web development"
     }
   ]
 }
