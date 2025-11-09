@@ -40,7 +40,7 @@ export function Header() {
       <div className="container flex h-16 items-center">
         <Link href="/" className="mr-6 flex items-center space-x-2">
           <MandalaIcon className="h-6 w-6 text-primary" />
-          <span className="font-bold font-headline">Omkar Ascent</span>
+          <span className="font-bold font-headline">Omkar Chavan</span>
         </Link>
         <nav className="hidden items-center space-x-6 text-sm font-medium md:flex">
           {navItems.map((item) => (
@@ -68,7 +68,7 @@ export function Header() {
                   className="flex items-center gap-2 text-lg font-semibold"
                 >
                   <MandalaIcon className="h-6 w-6 text-primary" />
-                  <span className="sr-only">Omkar Ascent</span>
+                  <span className="sr-only">Omkar Chavan</span>
                 </Link>
                 {navItems.map((item) => (
                   <Link
