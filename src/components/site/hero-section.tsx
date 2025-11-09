@@ -41,7 +41,7 @@ export function HeroSection() {
       {heroImage && (
         <Image
           src={heroImage.imageUrl}
-          alt={heroImage.description}
+          alt="Abstract background for Omkar Chavan's data analyst portfolio"
           fill
           className="object-cover"
           priority
@@ -52,7 +52,7 @@ export function HeroSection() {
       <div className="relative z-10 flex h-full flex-col items-center justify-center text-center">
         <div className="container">
           <h1 className="font-headline text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
-            Welcome to Omkar's Portfolio
+            Omkar Chavan: Data Analyst &amp; Automation Specialist
           </h1>
           <div className="mt-6 min-h-[2.25rem] md:min-h-[2.5rem]">
             {isPending ? (

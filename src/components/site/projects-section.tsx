@@ -32,9 +32,9 @@ export function ProjectsSection() {
               (img) => img.id === project.imagePlaceholderId
             );
             return (
-              <Card key={project.name} className="flex flex-col overflow-hidden">
+              <Card key={project.name} id={project.id} className="flex flex-col overflow-hidden">
                 <CardHeader>
-                  <CardTitle className="font-headline text-2xl">{project.name}</CardTitle>
+                  <CardTitle className="font-headline text-2xl"><h3 className="text-2xl font-semibold leading-none tracking-tight">{project.name}</h3></CardTitle>
                   <CardDescription>{project.description}</CardDescription>
                 </CardHeader>
                 <CardContent className="flex-grow space-y-4">
@@ -42,7 +42,7 @@ export function ProjectsSection() {
                     <div className="relative aspect-video w-full overflow-hidden rounded-lg">
                       <Image
                         src={projectImage.imageUrl}
-                        alt={projectImage.description}
+                        alt={projectImage.alt}
                         fill
                         className="object-cover transition-transform duration-300 hover:scale-105"
                         data-ai-hint={projectImage.imageHint}
